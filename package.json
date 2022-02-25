@@ -1,0 +1,14 @@
+{
+  "name": "com.bitsaurus.unity-nakama-helpers",
+  "version": "0.0.1",
+  "displayName": "Nakama Helpers",
+  "description": "A library intended for an easy use of Nakama client libraries on Unity",
+  "unity": "2019.1",
+  "keywords": [
+    "Nakama"
+  ],
+  "author": {
+    "name": "Alan Gaspar Einung"
+  },
+  "type": "library"
+}
