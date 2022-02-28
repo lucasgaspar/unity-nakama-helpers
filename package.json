@@ -4,6 +4,10 @@
   "displayName": "Nakama Helpers",
   "description": "A library intended for an easy use of Nakama client libraries on Unity",
   "unity": "2019.1",
+  "dependencies": {
+    "com.heroiclabs.nakama-unity": "https://github.com/heroiclabs/nakama-unity.git?path=/Packages/Nakama",
+    "com.unity.textmeshpro": "3.0.6"
+  },
   "keywords": [
     "Nakama"
   ],
