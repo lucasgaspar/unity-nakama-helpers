@@ -7,6 +7,8 @@ namespace Nakama.Helpers
     {
         #region FIELDS
 
+        private const string DefaultName = "Name";
+
         [SerializeField] private NakamaUser nakamaUser = null;
         [SerializeField] private Image avatar = null;
         [SerializeField] private Sprite defaultImage = null;
@@ -45,9 +47,7 @@ namespace Nakama.Helpers
 
             if (avatar != null)
             {
-                int index = 0;
-                int.TryParse(user.AvatarUrl, out index);
-                avatar.sprite = profilePictures.Pictures[index];
+
             }
 
             if (displayName != null)
@@ -58,8 +58,7 @@ namespace Nakama.Helpers
 
             if (level != null)
             {
-                MetadataData metadata = nakamaUserManager.Metadata.Deserialize<MetadataData>();
-                level.text = string.Format(LevelFormat, metadata == null || metadata.Level == 0 ? DefaultLevel : metadata.Level);
+
             }
         }
 

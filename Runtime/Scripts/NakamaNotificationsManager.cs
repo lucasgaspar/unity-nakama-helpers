@@ -82,16 +82,13 @@ namespace Nakama.Helpers
 
         private void ReceivedNotification(IApiNotification notification)
         {
-            unityMainThread.AddJob(() =>
-            {
-                if (notificationsTypesToShow.Contains((Code)notification.Code))
-                    notifications.Add(notification);
-                else
-                    DeleteNotifications(new List<string>() { notification.Id });
+            if (notificationsTypesToShow.Contains((Code)notification.Code))
+                notifications.Add(notification);
+            else
+                DeleteNotifications(new List<string>() { notification.Id });
 
-                if (onReceiveNotification.ContainsKey((Code)notification.Code))
-                    onReceiveNotification[(Code)notification.Code]?.Invoke(notification);
-            });
+            if (onReceiveNotification.ContainsKey((Code)notification.Code))
+                onReceiveNotification[(Code)notification.Code]?.Invoke(notification);
         }
 
         public async void SendNotification(Code code, string to, string subject = "", string body = "", Dictionary<string, string> data = null, bool persistent = false, bool nakama = true, bool firebase = false)
@@ -137,12 +134,12 @@ namespace Nakama.Helpers
         {
             NewNotificationsAmount = default(int);
             onNewNotificationAmountChanged?.Invoke(NewNotificationsAmount);
-            SaveData.SetPref<long>(SaveKey, DateTime.UtcNow.Ticks);
+            PlayerPrefs.SetString(SaveKey, DateTime.UtcNow.Ticks.ToString());
         }
 
         public long GetLastSeenTime()
         {
-            return SaveData.GetPref<long>(SaveKey);
+            return long.Parse(PlayerPrefs.GetString(SaveKey, default(long).ToString()));
         }
 
         public int GetNewNotificationsCount(params Code[] codes)

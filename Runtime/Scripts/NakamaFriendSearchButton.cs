@@ -59,7 +59,7 @@ namespace Nakama.Helpers
                 }
                 else
                 {
-                    errorMessage.text = translatedText != null ? ErrorUserNotFound : string.Empty;
+                    errorMessage.text = ErrorUserNotFound;
                 }
             }
             catch (ApiResponseException exception)

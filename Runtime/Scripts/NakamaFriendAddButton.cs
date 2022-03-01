@@ -9,9 +9,9 @@ namespace Nakama.Helpers
         #region FIELDS
 
         private const string localizationSection = "friends/{0}";
-        private const string ErrorCantAddYourself = "own_id";
-        private const string ErrorAlreadyYourFriend = "friend_already";
-        private const string ErrorAlreadySentRequest = "invite_sent";
+        private const string ErrorCantAddYourself = "Cant add yourself";
+        private const string ErrorAlreadyYourFriend = "Already your friend";
+        private const string ErrorAlreadySentRequest = "Already sent request";
 
         [SerializeField] private NakamaUser nakamaUser = null;
         [SerializeField] private Text errorMessage = null;
@@ -57,13 +57,13 @@ namespace Nakama.Helpers
                     errorMessage.text = string.Empty;
                     break;
                 case NakamaFriendsManager.CanAddFriendResult.CantAddYourself:
-                    message = LocalizationManager.GetTranslation(string.Format(localizationSection, ErrorCantAddYourself));
+                    message = ErrorCantAddYourself;
                     break;
                 case NakamaFriendsManager.CanAddFriendResult.AlreadyYourFriend:
-                    message = LocalizationManager.GetTranslation(string.Format(localizationSection, ErrorAlreadyYourFriend));
+                    message = ErrorAlreadyYourFriend;
                     break;
                 case NakamaFriendsManager.CanAddFriendResult.AlreadySentRequest:
-                    message = LocalizationManager.GetTranslation(string.Format(localizationSection, ErrorAlreadySentRequest));
+                    message = ErrorAlreadySentRequest;
                     break;
             }
 
