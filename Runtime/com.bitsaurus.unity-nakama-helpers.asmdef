@@ -1,3 +1,16 @@
 {
-	"name": "com.bitsaurus.nakama-helpers"
+    "name": "com.bitsaurus.nakama-helpers",
+    "rootNamespace": "",
+    "references": [
+        "GUID:69810832b544b46da9804f1af9373521"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

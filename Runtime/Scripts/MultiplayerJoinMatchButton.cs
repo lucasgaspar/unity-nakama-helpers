@@ -8,7 +8,6 @@ namespace Nakama.Helpers
     {
         #region FIELDS
 
-
         [SerializeField] private Button button = null;
         [SerializeField] private string sceneName = "";
 

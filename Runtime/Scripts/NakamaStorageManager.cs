@@ -116,7 +116,7 @@ namespace Nakama.Helpers
 
             try
             {
-                var objectIds = await nakamaManager.Client.WriteStorageObjectsAsync(nakamaManager.Session, writeStorageObject);
+                var objectIds = await nakamaManager.Client.WriteStorageObjectsAsync(nakamaManager.Session, new WriteStorageObject[] { writeStorageObject });
                 foreach (IApiStorageObjectAck storageObject in objectIds.Acks)
                 {
                     if (storageObject.Key != collectionObject.Key)
