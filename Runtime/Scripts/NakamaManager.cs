@@ -88,7 +88,7 @@ namespace Nakama.Helpers
             {
                 session = await sessionTask;
                 Debug.Log(session);
-                socket = client.NewSocket();
+                socket = client.NewSocket(true);
                 socket.Connected += Connected;
                 socket.Closed += Disconnected;
                 await socket.ConnectAsync(session);
