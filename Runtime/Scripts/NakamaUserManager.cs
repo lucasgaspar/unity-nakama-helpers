@@ -11,10 +11,6 @@ namespace Nakama.Helpers
         private const string BusyStatus = "Busy";
         private const string IncreaseLevelRpc = "IncreaseLevelRpc";
 
-        [SerializeField] private string[] defaultNamesFirstPart = null;
-        [SerializeField] private string[] defaultNamesSecondPart = null;
-        [SerializeField] private string[] defaultNamesThirdPart = null;
-
         private NakamaManager nakamaManager = null;
         private NakamaNotificationsManager nakamaNotificationsManager = null;
         private IApiAccount account = null;
@@ -82,14 +78,6 @@ namespace Nakama.Helpers
                 IsNewUser = true;
 
             onLoaded?.Invoke();
-        }
-
-        public string GenerateRandomName()
-        {
-            string firstPart = defaultNamesFirstPart[UnityEngine.Random.Range(0, defaultNamesFirstPart.Length)];
-            string secondPart = defaultNamesSecondPart[UnityEngine.Random.Range(0, defaultNamesSecondPart.Length)];
-            string thirdPart = defaultNamesThirdPart[UnityEngine.Random.Range(0, defaultNamesThirdPart.Length)];
-            return firstPart + secondPart + thirdPart;
         }
 
         public async void UpdateDisplayName(string displayName)
