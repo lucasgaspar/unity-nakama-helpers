@@ -7,10 +7,10 @@ namespace Nakama.Helpers
     {
         #region FIELDS
 
-        [SerializeField] private string scheme = null;
-        [SerializeField] private string host = null;
-        [SerializeField] private int port = default(int);
-        [SerializeField] private string serverKey = null;
+        [SerializeField] private string scheme = "http";
+        [SerializeField] private string host = "127.0.0.1";
+        [SerializeField] private int port = 7350;
+        [SerializeField] private string serverKey = "defaultkey";
 
         #endregion
 
